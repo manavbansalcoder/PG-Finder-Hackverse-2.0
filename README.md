@@ -2,10 +2,11 @@
 # TEAM DETAILS
 
 Team Name:- Innovatica 
-# Team Members:-
 
-Manav Bansal
-Rishabh Jain
+# TEAM MEMBERS
+
+1. Manav Bansal (@Manavbansalcoder)
+2. Rishabh Jain (@rishabhjaincoder)
 
 ## PROBLEM STATEMENT
 

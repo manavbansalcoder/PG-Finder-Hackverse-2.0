@@ -1,9 +1,9 @@
 # PG-Finder-Hackverse-2.0
-# TEAM DETAILS
+## TEAM DETAILS
 
 Team Name:- Innovatica 
 
-# TEAM MEMBERS
+## TEAM MEMBERS
 
 1. Manav Bansal (@Manavbansalcoder)
 2. Rishabh Jain (@rishabhjaincoder)

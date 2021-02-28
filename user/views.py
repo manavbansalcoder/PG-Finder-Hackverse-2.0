@@ -5,7 +5,6 @@ from django.http import HttpResponse
 def index(request):
 	pgs=PG.objects.filter()
 	pgs=pgs[:5]
-
 	for i in range(len(pgs)):
 		pgimages=PGImages.objects.filter(pgid=pgs[i])
 		if(len(pgimages)!=0):
@@ -28,8 +27,6 @@ def index(request):
 			pgs[i].ameneties.append('Meals')
 		if(amn.parking==True):
 			pgs[i].ameneties.append('Parking')
-
-
 	data={'pgs':pgs}
 	return render(request,'user/index.html',data)
 

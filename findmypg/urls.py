@@ -24,7 +24,7 @@ from owner import views as owner
 from user import views as user
 
 urlpatterns = [
-    #Admin
+    #Administrator
     path(r'owner/', owner.index),
     path(r'owner/register/', owner.register),
     path(r'owner/login/', owner.login),
@@ -36,7 +36,6 @@ urlpatterns = [
     path(r'owner/update/<int:id>', owner.updatepg),
     path(r'owner/pgs/', owner.pglist),
     path(r'owner/notifications/', owner.Notifications),
-
 
     #User
     path(r'', user.index),

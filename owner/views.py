@@ -4,7 +4,6 @@ from django.http import HttpResponse
 
 from main.models import *
 
-# Create your views here.
 def index(request):
 	loginid=request.session.get('loginid')
 	if(loginid):
@@ -24,7 +23,6 @@ def addpg(request):
 		return render(request,'owner/addpg.html',data)
 	elif(request.method=='POST'):
 		#PG
-
 		obj=PG()	
 		obj.address=request.POST.get('address')
 		obj.location=request.POST.get('location')
@@ -38,9 +36,7 @@ def addpg(request):
 		obj.intime='2018-08-10 08:00'
 		obj.outtime='2018-08-10 23:00'
 		obj.ownerid=Owner.objects.get(loginid=loginid)
-
 		obj.save()
-
 		#Ameneties
 		amn=Ameneties()
 		amn.pgid=obj
@@ -53,7 +49,6 @@ def addpg(request):
 		amn.meals=True if request.POST.get('meals') else False
 		amn.parking=True if request.POST.get('parking') else False
 		amn.save()
-
 		#PG Images
 		files=request.FILES.getlist('pgimages')
 		for f in files:
@@ -77,8 +72,6 @@ def register(request):
 	else:
 		username=request.POST.get('username')
 		password=request.POST.get('password')
-
-		#Check if Credentials already exists
 		if(Login.objects.filter(username=username).exists()):
 			data={}
 			data['error']='User already exists'
@@ -111,7 +104,6 @@ def login(request):
 		username=request.POST.get('username')
 		password=request.POST.get('password')
 
-		#Check if Credentials already exists
 		if(not Login.objects.filter(username=username,password=password).exists()):
 			data={}
 			data['error']='Username and/or Password Not exists'

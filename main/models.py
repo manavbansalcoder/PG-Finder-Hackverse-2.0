@@ -5,6 +5,7 @@ class Login(models.Model):
     password=models.CharField(max_length=30)
     logintype=models.CharField(max_length=30)
 
+
 class Owner(models.Model):
     loginid=models.ForeignKey(Login,on_delete=models.CASCADE)
     name=models.CharField(max_length=30)
@@ -12,6 +13,7 @@ class Owner(models.Model):
     phone=models.IntegerField()
     email=models.EmailField(max_length=30)
     photo=models.FileField()
+
 
 class User(models.Model):
     loginid=models.ForeignKey(Login,on_delete=models.CASCADE)
@@ -22,6 +24,7 @@ class User(models.Model):
     phone=models.IntegerField()
     email=models.EmailField(max_length=30)
     photo=models.FileField()
+
 
 class PG(models.Model):
     ownerid=models.ForeignKey(Owner, on_delete=models.CASCADE)
@@ -37,6 +40,7 @@ class PG(models.Model):
     intime=models.DateTimeField()
     outtime=models.DateTimeField()
 
+
 class Ameneties(models.Model):
     pgid=models.ForeignKey(PG,on_delete=models.CASCADE)
     ac=models.BooleanField()
@@ -48,9 +52,11 @@ class Ameneties(models.Model):
     meals=models.BooleanField()
     parking=models.BooleanField()
 
+
 class Favourites(models.Model):
     userid=models.ForeignKey(User,on_delete=models.CASCADE)
     pgid=models.ForeignKey(PG,on_delete=models.CASCADE)
+
 
 class Ratings(models.Model):
     userid=models.ForeignKey(User,on_delete=models.CASCADE)
@@ -58,6 +64,7 @@ class Ratings(models.Model):
     rating=models.IntegerField()
     review=models.CharField(max_length=30)
     date=models.DateField()
+
 
 class ContactOwner(models.Model):
     pgid=models.ForeignKey(PG,on_delete=models.CASCADE)
